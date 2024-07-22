@@ -22,7 +22,6 @@ _terminate:
   mov x16, #1             ; terminate
   svc 0                   ; syscall
 
-
 firstmessage: .ascii "Enter the first number:\n"
 .data
 buffer: .space 100
