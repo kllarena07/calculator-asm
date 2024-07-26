@@ -5,7 +5,7 @@ _main:
     mov x0, #1                          ; stdout
     adrp x1, first_message@PAGE         ; address of first message
     add x1, x1, first_message@PAGEOFF
-    mov x2, #24                         ; number of bytes of the first message
+    mov x2, #23                         ; number of bytes of the first message
     mov x16, #4                         ; write to stdout
     svc 0                               ; syscall
 
@@ -19,7 +19,7 @@ _main:
     mov x0, #1                          ; stdout
     adrp x1, second_message@PAGE        ; address of second message
     add x1, x1, second_message@PAGEOFF
-    mov x2, #25                         ; number of bytes of the first message
+    mov x2, #23                         ; number of bytes of the first message
     mov x16, #4                         ; write to stdout
     svc 0                               ; syscall
 
@@ -48,7 +48,7 @@ _terminate:
     svc 0                               ; syscall
 
 .data
-    first_message: .ascii "Enter the first number:\n"
-    second_message: .ascii "Enter the second number:\n"
+    first_message: .ascii "Enter a number (0-49):\n"
+    second_message: .ascii "Enter a number (0-49):\n"
     first_buffer: .space 1
     second_buffer: .space 1
